@@ -1,0 +1,19 @@
+<div class="comment">
+<p>
+  <b>Commenter:</b>
+  <u class="commenterbody"><%= comment.commenter %></u>
+</p>
+ 
+<p>
+  <b>Comment:</b>
+  <i class="commentbody"><%= comment.body %></i>
+</p>
+ 
+<p>
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               :confirm => 'Are you sure you want to delete the Comment?',
+               :method => :delete, class: "btn btn-mini" %>
+</p>
+
+<hr color="blue" size="5" />
+</div>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+ <h4 class="subtitle">Posts</h4>
+<p>
+  <b>Name:</b>
+  <u class="postname"><%= @post.name %></u>
+</p>
+ 
+<p>
+  <b>Title:</b>
+  <b class="postitle"><%= @post.title %></b>
+</p>
+ 
+<p>
+  <b>Content:</b>
+  <i class="postcontent"><%= @post.content %></i>
+</p>
+ 
+<p>
+  <b>Tags:</b>
+  <i class=commentbody><%= join_tags(@post) %></i>
+</p>
+ 
+<h3><i>Comments</i></h3>
+<%= render @post.comments %>
+<hr />
+ 
+<h3><i>Add a comment:</i></h3>
+<%= render "comments/form" %>
+ 
+</div> 
+ 
+<%= link_to 'Edit Post', edit_post_path(@post) %> |
+<%= link_to 'Back to Posts', posts_path %> |
+
