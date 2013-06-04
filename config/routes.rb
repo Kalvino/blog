@@ -1,11 +1,13 @@
 Blog::Application.routes.draw do
+  get "users/new"
+
   resources :posts do
     resources :comments
   get "feed" => 'posts#feed',
         :as => :feed,
         :defaults => { :format => 'atom' }
   end  
-
+  match '/signup',  to: 'users#new'
 
   get "home/index"
 
