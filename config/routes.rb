@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :posts do
     resources :comments
@@ -8,6 +9,8 @@ Blog::Application.routes.draw do
         :defaults => { :format => 'atom' }
   end  
   match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   get "home/index"
 
